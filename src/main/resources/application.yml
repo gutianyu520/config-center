@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/gutianyu520/config.git
+          username: gutianyu520
+          password: 5201314aAbB
+          search-paths: dev
+          skip-ssl-validation: true
+      label: master
+server:
+  port: 8080
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
